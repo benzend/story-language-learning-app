@@ -1,1 +1,1 @@
-export type TStoryContent = Array<Array<string>>;
+export type TStoryContent = string;
