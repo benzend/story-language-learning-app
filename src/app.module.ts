@@ -4,9 +4,15 @@ import { AppService } from './app.service';
 import { StoriesModule } from './stories/stories.module';
 import { WordsModule } from './words/words.module';
 import { SentencesModule } from './sentences/sentences.module';
+import { InMemoryDBModule } from '@nestjs-addons/in-memory-db';
 
 @Module({
-  imports: [StoriesModule, WordsModule, SentencesModule],
+  imports: [
+    StoriesModule,
+    WordsModule,
+    SentencesModule,
+    InMemoryDBModule.forRoot({}),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
