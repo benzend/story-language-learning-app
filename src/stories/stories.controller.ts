@@ -1,34 +1,38 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { StoriesService } from './stories.service';
-import { CreateStoryDto } from './dto/create-story.dto';
-import { UpdateStoryDto } from './dto/update-story.dto';
+import { InMemoryDBService } from '@nestjs-addons/in-memory-db';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { StoryEntity } from './interfaces/story';
 
 @Controller('stories')
 export class StoriesController {
-  constructor(private readonly storiesService: StoriesService) {}
+  constructor(
+    private readonly storiesService: InMemoryDBService<StoryEntity>,
+  ) {}
 
   @Post()
-  create(@Body() createStoryDto: CreateStoryDto) {
-    return this.storiesService.create(createStoryDto);
-  }
-
-  @Get()
-  findAll() {
-    return this.storiesService.findAll();
+  create(@Body() story: StoryEntity) {
+    return this.storiesService.create(story);
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.storiesService.findOne(+id);
+    return this.storiesService.get(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateStoryDto: UpdateStoryDto) {
-    return this.storiesService.update(+id, updateStoryDto);
+  update(@Param('id') @Body() story: StoryEntity) {
+    return this.storiesService.update(story);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.storiesService.remove(+id);
+    return this.storiesService.delete(id);
   }
 }
