@@ -16,6 +16,7 @@ import { join } from 'path';
     InMemoryDBModule.forRoot({}),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'client'),
+      exclude: ['/api*'],
     }),
   ],
   controllers: [AppController],
