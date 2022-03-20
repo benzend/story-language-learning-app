@@ -2,12 +2,12 @@
 
 The main technologies being used:
 
-- Next.js
+- Nest.js
 - React.js (TypeScript)
 
-Next.js is the _root_ of the project while React is stuck in the `client` folder.
+Nest.js is the _root_ of the project while React is stuck in the `client` folder.
 
-Next.js's job is to both serve the React code and act as an API for the project.
+Nest.js's job is to both serve the React code and act as an API for the project.
 
 ## Setup
 
@@ -29,5 +29,5 @@ There are two parts to getting this app functional.
 
 If you're wanting to have a development setup for things like _compiling whenever you save_, you'll want to follow these steps.
 
-1. In the _root_ of the application, run `npm run start:dev`. Next.js will be watching for any changes you make in the backend of the project.
+1. In the _root_ of the application, run `npm run start:dev`. Nest.js will be watching for any changes you make in the backend of the project.
 2. In the _client_ folder, run `npm run start`. Webpack will be watching for any changes you make in the client folder.
