@@ -1,3 +1,14 @@
+## Project Breakdown
+
+The main technologies being used:
+
+- Next.js
+- React.js (TypeScript)
+
+Next.js is the _root_ of the project while React is stuck in the `client` folder.
+
+Next.js's job is to both serve the React code and act as an API for the project.
+
 ## Setup
 
 1. _Clone the repository_ - Run `git clone "https://github.com/benzend/story-language-learning-app`
