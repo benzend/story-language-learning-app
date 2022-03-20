@@ -15,7 +15,7 @@ import { join } from 'path';
     SentencesModule,
     InMemoryDBModule.forRoot({}),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'client'),
+      rootPath: join(__dirname, '..', 'client', 'build'),
       exclude: ['/api*'],
     }),
   ],
