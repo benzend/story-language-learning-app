@@ -19,6 +19,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
+      {
+        test: /\.s(a|c)ss$/,
+        use: ['sass-loader', 'style-loader', 'css-loader'],
+      },
     ],
   },
   plugins: [
