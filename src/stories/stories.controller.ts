@@ -23,6 +23,12 @@ export class StoriesController {
 
   @Post()
   create(@Body() story: StoryEntity) {
+    const date = new Date();
+
+    if (story.pageCount === undefined) story.pageCount = 0;
+    story.dateCreated = date;
+    story.dateLastEdited = date;
+
     return this.storiesService.create(story);
   }
 
