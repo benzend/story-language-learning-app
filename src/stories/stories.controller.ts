@@ -16,6 +16,11 @@ export class StoriesController {
     private readonly storiesService: InMemoryDBService<StoryEntity>,
   ) {}
 
+  @Get()
+  findAll() {
+    return this.storiesService.getAll();
+  }
+
   @Post()
   create(@Body() story: StoryEntity) {
     return this.storiesService.create(story);
